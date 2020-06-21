@@ -18,7 +18,7 @@ type HomePageData struct {
 }
 
 func main() {
-	port := 5399
+	port := os.Getenv("PORT")
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 
