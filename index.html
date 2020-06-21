@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Panda</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="main">
+        {{if .PandaFound}}
+        <div class="text-container">
+            <h2>Whoop! 🤩</h2>
+            <p>Here is today's panda.</p>
+        </div>
+        <div class="img-container">
+            <img src="{{.ImageURL}}" alt="{{.FileName}}">
+            <p class="img-alt-text"><small>Source: <a href="{{.Source}}" target="_blank">{{.Source}}</a> </small></p>
+        </div>
+        {{else}}
+            <h2>Omo.</h2>
+            <p>There's no panda today.</p>
+        {{end}}
+        <div class="footer">
+            <p><i>Made with ❤️ by <a class="link" href="https://opeonikute.dev" target="_blank">a fellow panda lover</a>. See you tomorrow :)</i></p>
+        </div>
+    </div>
+</body>
+</html>
