@@ -45,8 +45,8 @@ func main() {
 	fs := http.FileServer(http.Dir("static/"))
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	fmt.Printf("Server listening on port: %d\n", port)
-	http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
+	fmt.Printf("Server listening on port: %s\n", port)
+	http.ListenAndServe(fmt.Sprintf(":%s", port), nil)
 }
 
 func getPandaOfTheDay() (panda.Entry, error) {
