@@ -5,6 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Daily Panda</title>
+
+    <meta
+        name="description"
+        content="A Panda a day keeps something away."
+    />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Ope__O" />
+    <meta name="twitter:title" content="Daily Panda" />
+    <meta
+        name="twitter:description"
+        content="A Panda a day keeps something away."
+    />
+    <meta name="twitter:creator" content="@Ope__O" />
+
+    {{if .PandaFound}}
+        <meta
+            name="twitter:image"
+            content="{{.ImageURL}}"
+        />
+    {{end}}
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Daily Panda" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://daily-panda.herokuapp.com" />
+    {{if .PandaFound}}
+        <meta
+            property="og:image"
+            content="{{.ImageURL}}"
+        />
+    {{end}}
+    <meta
+        property="og:description"
+        content="A panda a day keeps something away."
+    />
+    <meta property="og:site_name" content="Daily Panda" />
+
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 
