@@ -44,6 +44,9 @@
     />
     <meta property="og:site_name" content="Daily Panda" />
 
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 
@@ -60,21 +63,35 @@
 <body>
     <div class="main">
         {{if .PandaFound}}
-        <div class="text-container">
-            <h2>Whoop! 🤩</h2>
-            <p>Here is today's panda. See you tomorrow :)</p>
-        </div>
-        <div class="img-container">
-            <img src="{{.ImageURL}}" alt="{{.FileName}}">
-            <p class="img-alt-text"><small>Source: <a href="{{.Source}}" target="_blank">{{.Source}}</a> </small></p>
+        <div class="img-container" style="background-image: linear-gradient(0deg, rgba(141, 198, 63, 0) 48%, rgba(6, 6, 6, 0.31)), linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({{.ImageURL}})">
+            <div class="img-holder">
+                <div class="top-right">
+                    <p class="img-year-text"></p>
+                </div>
+                <div class="bottom-right">
+                    <p class="img-alt-text"><a href="{{.Source}}" target="_blank">www.todays-source.com</a></p>
+                    <p class="img-director-text">Directed by <a href="https://opeonikute.dev" target="_blank">a fellow panda lover</a> from Lagos - Nigeria, who also delivered <a href="https://marlians.opeonikute.dev" target="_blank">this gem</a>.</p>
+                </div>
+                <div class="bottom-left">
+                    <h2>Pandas are the best.</h2>
+                    <p class="img-year-text mobile-only"></p>
+                </div>
+            </div>
         </div>
         {{else}}
             <h2>Omo. 😔</h2>
             <p>There's no panda today. See you tomorrow :)</p>
         {{end}}
-        <div class="footer">
-            <p><i>Made with ❤️ by <a class="link" href="https://opeonikute.dev" target="_blank">a fellow panda lover</a>.</i></p>
-        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <script>
+        // self executing function here
+        (function() {
+            const dateField = document.getElementsByClassName('img-year-text');
+            for (let field of dateField) {
+                field.innerHTML = moment().format('Do MMMM, YYYY');
+            }
+        })();
+    </script>
 </body>
 </html>
