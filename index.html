@@ -66,14 +66,15 @@
         <div class="img-container" style="background-image: linear-gradient(0deg, rgba(141, 198, 63, 0) 48%, rgba(6, 6, 6, 0.31)), linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({{.ImageURL}})">
             <div class="img-holder">
                 <div class="top-right">
-                    <p class="img-year-text" id="date"></p>
+                    <p class="img-year-text"></p>
                 </div>
                 <div class="bottom-right">
                     <p class="img-alt-text"><a href="{{.Source}}" target="_blank">www.todays-source.com</a></p>
-                    <p class="img-director-text">Directed by <a href="https://opeonikute.dev" target="_blank">a fellow panda lover</a> from Lagos - Nigeria who also gave y'all <a href="https://marlians.opeonikute.dev" target="_blank">this gem</a>.</p>
+                    <p class="img-director-text">Directed by <a href="https://opeonikute.dev" target="_blank">a fellow panda lover</a> from Lagos - Nigeria, who also delivered <a href="https://marlians.opeonikute.dev" target="_blank">this gem</a>.</p>
                 </div>
                 <div class="bottom-left">
                     <h2>Pandas are the best.</h2>
+                    <p class="img-year-text mobile-only"></p>
                 </div>
             </div>
         </div>
@@ -86,8 +87,10 @@
     <script>
         // self executing function here
         (function() {
-            const dateField = document.getElementById('date');
-            dateField.innerHTML = moment().format('Do MMMM, YYYY');
+            const dateField = document.getElementsByClassName('img-year-text');
+            for (let field of dateField) {
+                field.innerHTML = moment().format('Do MMMM, YYYY');
+            }
         })();
     </script>
 </body>

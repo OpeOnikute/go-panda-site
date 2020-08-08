@@ -67,6 +67,10 @@ div.img-holder {
     width: 100%;
 }
 
+.mobile-only {
+    display: none;
+}
+
 .bottom-right {
     position: absolute;
     right: 10px;
@@ -129,7 +133,8 @@ a.link {
     .bottom-left {
         top: 20px;
         bottom: auto;
-        max-width: 70%;
+        max-width: 100%;
+        text-align: center;
     }
     .bottom-left h2 {
         font-size: 300%;
@@ -140,5 +145,17 @@ a.link {
         text-align: center;
         left: 10px;
         right: auto;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    p.img-alt-text, p.img-year-text {
+        font-size: 14px;
+    }
+
+    p.img-director-text {
+        font-size: 125%;
     }
 }
