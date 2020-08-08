@@ -1,6 +1,7 @@
 body {
     background-image: url("/static/img/bg.png");
     background-size: cover;
+    margin: 0;
 }
 
 div.main {
@@ -9,8 +10,8 @@ div.main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 90vh;
-    padding: 5vh 0;
+    min-height: 94vh;
+    padding: 3vh 0;
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -24,17 +25,80 @@ div.main a {
     width: 100%
 }
 
-p.img-alt-text {
-    margin-top: 0;
+p.img-alt-text a, p.img-director-text a {
+    text-decoration: underline;
 }
 
-.img-alt-text small {
+.img-container a:hover {
+    color: brown;
+}
+
+p.img-alt-text, p.img-year-text {
     font-size: 12px;
-    color: gray;
+    color: white;
+    letter-spacing: 1px;
+}
+
+p.img-alt-text, p.img-year-text {
+    font-size: 10px;
+}
+
+p.img-director-text {
+    font-size: 110%;
 }
 
 div.img-container {
-    margin: 8vh 0;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 80vw;
+    min-height: 80vh;
+    position: relative;
+    padding: 2vw;
+    border: 3px solid;
+}
+
+div.img-holder {
+    position: relative;
+    height: 100%;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.bottom-right {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    text-align: right;
+    color: white;
+    letter-spacing: 1px;
+    font-size: small;
+    max-width: 35%;
+}
+
+.bottom-left {
+    text-align: left;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    max-width: 35%;
+    color: white;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    max-width: 40%;
+    text-align: right;
+}
+
+.bottom-left h2 {
+    font-size: 400%;
+    margin: 0;
+    line-height: 50px;
 }
 
 a.link {
@@ -47,4 +111,34 @@ a.link {
 
 .text-container p {
     margin-top: 0;
+}
+
+
+@media only screen and (min-width: 1268px) {
+    div.img-container {
+        /* need that rectangle effect */
+        max-width: 40vw;
+    }
+}
+
+@media only screen and (max-width: 1268px) {
+    .top-right {
+        display: none;
+    }
+    /* Move to top left */
+    .bottom-left {
+        top: 20px;
+        bottom: auto;
+        max-width: 70%;
+    }
+    .bottom-left h2 {
+        font-size: 300%;
+        line-height: 42px;
+    }
+    .bottom-right {
+        max-width: 100%;
+        text-align: center;
+        left: 10px;
+        right: auto;
+    }
 }
