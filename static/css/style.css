@@ -57,7 +57,7 @@ div.img-container {
     min-height: 80vh;
     position: relative;
     padding: 2vw;
-    border: 3px solid;
+    border: 1.5vw solid;
 }
 
 div.img-holder {
@@ -122,6 +122,7 @@ a.link {
     div.img-container {
         /* need that rectangle effect */
         max-width: 40vw;
+        border: 0.8vw solid;
     }
 }
 
