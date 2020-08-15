@@ -11,10 +11,11 @@ import (
 )
 
 type HomePageData struct {
-	PandaFound bool
-	ImageURL   string
-	Source     string
-	FileName   string
+	PandaFound   bool
+	ImageURL     string
+	Source       string
+	FileName     string
+	WordOfTheDay string
 }
 
 func main() {
@@ -35,6 +36,12 @@ func main() {
 			data.ImageURL = panda.URL
 			data.Source = panda.Source
 			data.FileName = panda.FileName
+			// Would prefer to do this using a ternary,
+			// but if-else is the idiomatic way to do it in Go.
+			data.WordOfTheDay = panda.WordOfTheDay
+			if data.WordOfTheDay == "" {
+				data.WordOfTheDay = "Pandas are the best."
+			}
 		}
 
 		tmpl := template.Must(template.ParseFiles("index.html"))

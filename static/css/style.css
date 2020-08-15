@@ -34,13 +34,9 @@ p.img-alt-text a, p.img-director-text a {
 }
 
 p.img-alt-text, p.img-year-text {
-    font-size: 12px;
+    font-size: 0.8em;
     color: white;
     letter-spacing: 1px;
-}
-
-p.img-alt-text, p.img-year-text {
-    font-size: 10px;
 }
 
 p.img-director-text {
@@ -135,6 +131,7 @@ a.link {
         top: 20px;
         bottom: auto;
         max-width: 100%;
+        width: 100%;
         text-align: center;
     }
     .bottom-left h2 {
@@ -143,6 +140,7 @@ a.link {
     }
     .bottom-right {
         max-width: 100%;
+        width: 100%;
         text-align: center;
         left: 10px;
         right: auto;
@@ -153,7 +151,7 @@ a.link {
     }
 
     p.img-alt-text, p.img-year-text {
-        font-size: 14px;
+        font-size: 1.2em;
     }
 
     p.img-director-text {
